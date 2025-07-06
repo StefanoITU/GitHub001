@@ -259,4 +259,3 @@ class DanishJobScraper:
 if __name__ == "__main__":
     scraper = DanishJobScraper()
     scraper.scrape_all_jobs()
-EOF
