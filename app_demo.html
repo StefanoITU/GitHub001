@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Job Aggregator - Demo View</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-robot text-white text-3xl"></i>
+                    <div>
+                        <h1 class="text-white text-2xl font-bold">AI Job Aggregator</h1>
+                        <p class="text-purple-100">Danish AI Consultancy Jobs</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors">
+                        <i class="fas fa-sync-alt mr-2"></i>Scrape Jobs Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Demo Notice -->
+    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 m-4">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm">
+                    <strong>Demo Mode:</strong> This is a static preview of your AI Job Aggregator app running on the server.
+                    The actual app includes live job scraping, real-time updates, and interactive features.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-8">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-2xl font-bold text-gray-900">0</p>
+                        <h3 class="text-gray-500 text-sm">Total Jobs</h3>
+                    </div>
+                    <i class="fas fa-briefcase text-purple-600 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-2xl font-bold text-gray-900">0</p>
+                        <h3 class="text-gray-500 text-sm">Today</h3>
+                    </div>
+                    <i class="fas fa-calendar-day text-green-600 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-2xl font-bold text-gray-900">0</p>
+                        <h3 class="text-gray-500 text-sm">This Week</h3>
+                    </div>
+                    <i class="fas fa-calendar-week text-blue-600 text-2xl"></i>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-2xl font-bold text-gray-900">0</p>
+                        <h3 class="text-gray-500 text-sm">High Relevance</h3>
+                    </div>
+                    <i class="fas fa-star text-yellow-600 text-2xl"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Filters Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-900">Filters</h2>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                            <select class="w-full p-2 border border-gray-300 rounded-lg">
+                                <option>All Companies</option>
+                                <option>NNIT</option>
+                                <option>Deloitte</option>
+                                <option>Accenture</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                            <select class="w-full p-2 border border-gray-300 rounded-lg">
+                                <option>All Locations</option>
+                                <option>Copenhagen</option>
+                                <option>Aarhus</option>
+                                <option>Odense</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Job Type</label>
+                            <select class="w-full p-2 border border-gray-300 rounded-lg">
+                                <option>All Types</option>
+                                <option>Full-time</option>
+                                <option>Contract</option>
+                                <option>Remote</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors flex-1">
+                                Apply
+                            </button>
+                            <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 transition-colors flex-1">
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Listings -->
+            <div class="lg:col-span-3">
+                <div class="bg-white rounded-lg shadow-md">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-xl font-semibold text-gray-900">Job Listings</h2>
+                            <span class="text-sm text-gray-500">0 jobs found</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="text-center py-12">
+                            <i class="fas fa-search text-gray-400 text-6xl mb-4"></i>
+                            <h3 class="text-lg font-semibold text-gray-600 mb-2">No Jobs Found</h3>
+                            <p class="text-gray-500 mb-4">Click "Scrape Jobs Now" to start collecting AI consultancy jobs from Danish companies.</p>
+                            <div class="space-y-2 text-sm text-gray-600">
+                                <p><strong>Sources being monitored:</strong></p>
+                                <ul class="list-disc list-inside space-y-1">
+                                    <li>NNIT Career Page</li>
+                                    <li>Deloitte Denmark Jobs</li>
+                                    <li>Accenture Nordic</li>
+                                    <li>IBM Denmark</li>
+                                    <li>TietoEVRY Career Portal</li>
+                                    <li>Netcompany Jobs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Notice -->
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 m-4">
+        <h3 class="text-lg font-semibold text-blue-900 mb-3">
+            <i class="fas fa-magic mr-2"></i>App Features
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-blue-800">
+            <div>
+                <h4 class="font-semibold mb-2">🔍 Job Scraping</h4>
+                <ul class="list-disc list-inside space-y-1 ml-4">
+                    <li>Automated daily scraping at 9 AM</li>
+                    <li>Manual scraping on-demand</li>
+                    <li>Multiple Danish AI consultancy sources</li>
+                    <li>AI keyword filtering</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">📊 Analytics</h4>
+                <ul class="list-disc list-inside space-y-1 ml-4">
+                    <li>Real-time job statistics</li>
+                    <li>Company hiring trends</li>
+                    <li>Location-based insights</li>
+                    <li>Job relevance scoring</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">🔄 API Endpoints</h4>
+                <ul class="list-disc list-inside space-y-1 ml-4">
+                    <li>GET /api/jobs - Job listings</li>
+                    <li>GET /api/jobs/stats - Statistics</li>
+                    <li>POST /api/jobs/scrape - Manual scrape</li>
+                    <li>JSON responses with filters</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">🎨 User Interface</h4>
+                <ul class="list-disc list-inside space-y-1 ml-4">
+                    <li>Modern responsive design</li>
+                    <li>Real-time updates</li>
+                    <li>Advanced filtering</li>
+                    <li>Mobile-friendly layout</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 AI Job Aggregator. Built with FastAPI, Python & Modern Web Technologies.</p>
+        </div>
+    </footer>
+</body>
+</html>
