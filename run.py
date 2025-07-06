@@ -18,7 +18,7 @@ def check_dependencies():
         import fastapi
         import uvicorn
         import requests
-        import beautifulsoup4
+        import bs4
         import selenium
         import pandas
         import sqlalchemy
