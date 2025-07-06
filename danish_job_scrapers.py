@@ -1,4 +1,4 @@
-cat > danish_job_scrapers.py << 'EOF'
+
 """
 Danish AI Job Scrapers for various job boards
 """
